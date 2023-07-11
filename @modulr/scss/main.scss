@@ -1,0 +1,476 @@
+@use 'core';
+@use 'config' as config;
+@use 'components/button';
+@use 'components/toolbar';
+@use 'components/swiper';
+@use 'components/form';
+@use 'components/thumbnail';
+@use 'components/modal';
+@use 'listing';
+
+// -- this is for testing remove this
+.fromtop{
+  padding-top: config.$toolbar;
+}
+.linkdd{
+  position: relative;
+  left: 2px;
+}
+.add-listing{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1000;
+}
+.view-listing{
+  position: fixed;
+  right: 16px;
+  bottom:66px;
+  z-index: 1000;
+}
+.list{
+  padding: 16px;
+  border: 1px solid #777;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  & p{
+    margin-bottom: 6px;
+  }
+}
+.toolbar{
+  & .logo{
+    float: left;
+    font-size: 23px;
+    margin-right: 24px;
+  }
+}
+// -- shoplr start
+body {
+  font-family: config.$font;
+  color: #000;
+  line-height: 1.5;
+  letter-spacing: -0.4px;
+}
+#app {
+  float: left;
+  width: 100%;
+  min-height: 100%;
+}
+// public menu
+.menu {
+  padding: 0;
+  margin: 0 8px 0 0;
+  & li {
+    margin: 0 14px;
+    & a {
+      color: #000;
+      position: relative;
+      font-size: 16px;
+      font-weight: 500;
+      font-family: config.$font;
+      & .line {
+        position: absolute;
+        height: 1px;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        padding: 0 30%;
+        &::after {
+          content: '';
+          display: block;
+          background-color: #000;
+          height: 1px;
+          width: 0;
+          transition: width 300ms ease-in-out;
+        }
+      }
+      &:hover,
+      &.active {
+        & .line::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// hover animate link
+.link {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 0;
+    display: block;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    transition: width 200ms ease-in-out;
+  }
+  &:hover,
+  &.active {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+// homepage
+$home-padding: 100px;
+.intro {
+  padding: 0 $home-padding;
+  text-align: left;
+  & h1 {
+    font-weight: 500;
+    font-size: 35px;
+    margin-bottom: 12px;
+  }
+  & p {
+    font-size: 18px;
+    line-height: 29px;
+  }
+  & .learn-more {
+    margin-top: 20px;
+    & .btn {
+      height: 48px;
+      line-height: 48px;
+      border-radius: config.$form-field-radius;
+      padding: 0 22px;
+      font-size: 18px;
+      font-weight: 400;
+      border: 1px solid #777;
+    }
+  }
+}
+.get-started {
+  padding: 0 $home-padding 24px $home-padding;
+  & .inner {
+    width: 560px;
+    & h1 {
+      font-size: 23px;
+      margin-bottom: 20px;
+      float: left;
+      width: 100%;
+      font-weight: 500;
+    }
+    & .big-form {
+      position: relative;
+      width: 100%;
+      float: left;
+      & input {
+        border: 1px solid #777;
+        padding: 0 16px 0 104px;
+        font-size: 18px;
+        font-weight: 400 !important;
+        color: #000;
+        height: 58px;
+        border-radius: config.$form-field-radius;
+        width: 100%;
+        line-height: 58px;
+      }
+      & label {
+        position: absolute;
+        left: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        top: 15px;
+      }
+      .btn-border {
+        height: 58px;
+        line-height: 58px;
+        font-size: 18px;
+        margin: 0;
+        &.floating {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+    }
+    & .hint {
+      font-size: 14px;
+      color: #3b3b3b;
+      padding-left: 20px;
+      float: left;
+      width: 100%;
+      margin-top: 8px;
+    }
+  }
+}
+
+// auth
+.auth {
+  width: 400px;
+  margin: 0 auto;
+  -webkit-transform: translateZ(0);
+  animation: fadeIn;
+  animation-duration: 600ms;
+  animation-timing-function: ease-in-out;
+  & .auth-header {
+    text-align: center;
+    & .links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 12px 0;
+      & .divider {
+        height: 15px;
+        width: 1px;
+        display: block;
+        background-color: #555;
+        margin: 0 12px;
+      }
+      & a {
+        font-size: 15px;
+        font-weight: 600;
+      }
+    }
+  }
+  & .auth-footer {
+    text-align: center;
+    & p,
+    a {
+      font-size: 15px;
+      line-height: 26px;
+    }
+  }
+  & .auth-content {
+    margin: 16px 0;
+  }
+}
+
+// Listing page
+.listing {
+  animation: fadeIn;
+  animation-duration: 600ms;
+  animation-timing-function: ease-in-out;
+  padding-bottom: config.$toolbar;
+  & .title {
+    margin-bottom: 14px;
+  }
+}
+
+
+// Responsive
+@media only screen and (max-width: config.$wrapper) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .intro {
+    justify-content: center;
+  }
+  .big-screen {
+    max-width: config.$wrapper;
+    float: right;
+  }
+}
+// laptop
+@media only screen and (max-width: 1440px) {
+  .intro {
+    padding: 0 60px;
+    & h1 {
+      font-size: 33px;
+    }
+    & p {
+      font-size: 16px;
+    }
+  }
+  .get-started {
+    padding: 0 60px;
+  }
+}
+// mac book
+@media only screen and (max-width: 1366px) {
+  .sms-down {
+    padding-top: config.$toolbar;
+  }
+}
+// small laptop
+@media only screen and (max-width: 1280px) {
+  .intro {
+    padding: 0 40px;
+    & h1 {
+      font-size: 30px;
+    }
+    & p {
+      font-size: 15px;
+    }
+  }
+  .get-started {
+    padding: 0 40px;
+  }
+}
+// tablet
+@media only screen and (max-width: 1024px) {
+  .sms-down {
+    padding-top: 0;
+  }
+  .intro {
+    width: 100%;
+    height: 600px;
+    padding-top: 40px;
+  }
+  .get-started {
+    height: auto;
+    width: 100%;
+    margin-top: config.$toolbar;
+    & .inner {
+      width: 100%;
+    }
+  }
+}
+// phone
+@media only screen and (max-width: 768px) {
+  .toolbar-row {
+    padding: 0 16px !important;
+  }
+  .mobile-width,
+  .mfw {
+    float: left;
+    width: 100%;
+  }
+  .intro {
+    padding: 0 16px;
+    & .sms-down {
+      padding-top: config.$toolbar;
+    }
+    & h1 {
+      line-height: 39px;
+    }
+  }
+  .get-started {
+    padding: 0 16px 80px 16px;
+    & .inner {
+      & h1 {
+        font-size: 19px;
+      }
+      & .big-form {
+        & .btn-border {
+          position: relative !important;
+          width: 100%;
+          float: left;
+          margin: 16px 0;
+        }
+      }
+    }
+  }
+  // auth
+  .auth {
+    width: 100%;
+    padding: 0 16px;
+  }
+  .auth-bar {
+    background-color: #fff;
+  }
+
+  // responsive listing
+  .menubar {
+    display: none;
+  }
+  .listing {
+    width: 100%;
+    & .gallery {
+      border-radius: 0;
+      & .swiper-slide {
+        border-radius: 0;
+        & img {
+          border-radius: 0;
+        }
+      }
+      // & .btn-icon{
+      //   visibility: visible;
+      //   opacity: 1;
+      // }
+      & .swiper-pagination {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    & .heading {
+      float: left;
+      width: 100%;
+      height: auto;
+      padding: 0 16px;
+      margin-bottom: 6px;
+      margin-top: 4px;
+      & h1 {
+        line-height: 29px;
+        margin-bottom: 8px;
+        margin-top: 0;
+      }
+      & .meta {
+        height: auto;
+        & .actions {
+          float: left;
+          width: 100%;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          height: auto;
+          & a {
+            margin-bottom: 6px;
+          }
+        }
+        & .buttons {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-end;
+        }
+      }
+    }
+    & .seller {
+      display: block;
+      margin-top: 6px;
+      float: left;
+      width: 100%;
+      height: auto;
+      & .seller-info,
+      .pricing,
+      .buttons {
+        padding: 0 16px;
+      }
+      & .seller-info {
+        height: 80px;
+      }
+      .mfw {
+        justify-content: flex-start;
+        & .spacer {
+          display: none;
+        }
+        &.pricing {
+          flex-direction: column;
+          & .divider {
+            height: 1px;
+            width: 100%;
+            border-left: 0;
+            border-top: 1px dashed #bbb;
+            margin: 10px 0;
+          }
+        }
+        &.buttons {
+          justify-content: space-between;
+          border: none !important;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          & .btn-wrapper {
+            margin: 0;
+            flex-direction: row;
+            & .btn-icon {
+              margin: 0 6px 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // dark theme
+  .dark .divider {
+    border-color: #484848 !important;
+  }
+}
+@media only screen and (max-width: 425px) {
+}

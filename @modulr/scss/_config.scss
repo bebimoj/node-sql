@@ -1,0 +1,170 @@
+$wrapper: 786px;
+$padding: 16px;
+$toolbar-padding: 20px;
+$padding-h: 0 16px;
+$padding-v: 16px 0;
+$font: 'Raleway', Helvetica, sans-serif;
+$roboto: 'Roboto', Helvetica, sans-serif;
+$number: Arial, Helvetica, sans-serif;
+$toolbar: 76px;
+$menubar:  80px;
+
+// buttons
+$btn-font-weight: 500;
+$button-size: 38px;
+$fw-button: 42px;
+$button-md-size: 46px;
+
+// input configurations
+$toggle-move: 17px;
+$toggle-height: 24px;
+$toggle-width: 40px;
+
+// typography
+$w-light: 400;
+$w-regular: 500;
+$w-medium: 600;
+$w-bold: 800;
+
+
+// size
+$title: 23px;
+$title-small: 23px;
+$regular: 15px;
+$small: 14px;
+
+$form-field-radius: 12px;
+.roboto{
+  font-family: $roboto;
+}
+// inputs 
+input{
+  font-family: $roboto;
+}
+
+// material icons
+.icon{
+  display: block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+.grow{
+  font-size: 27px;
+}
+.shrink{
+  font-size: 22px;
+}
+// - animation fix
+// animation fix
+.anim{
+  transform: translateZ(0);
+}
+.fromtop{
+  padding-top: $toolbar;
+}
+.fw{
+  width: 100%;
+}
+// - fonts
+.number{
+  font-family: $number;
+  font-weight: 600;
+}
+.fw400{
+  font-weight: 400;
+}
+.fw500{
+  font-weight: 500;
+}
+.fw600{
+  font-weight: 600;
+}
+.fw800{
+  font-weight: 800;
+}
+.title{
+  font-size: $title;
+  font-weight: 500;
+}
+.title-sm{
+  font-size: $title-small;
+  font-weight: 500;
+}
+.regular{
+  font-size: $regular;
+  font-weight: 500;
+}
+.small{
+  font-size: $small;
+  font-weight: 500;
+}
+// - icon fixers
+.up{
+  position: relative;
+  top: -1px;
+}
+.up-2{
+  position: relative;
+  top: -2px;
+}
+.down{
+  position: relative;
+  top: 1px;
+}
+.down-2{
+  position: relative;
+  top: 0.094rem;
+}
+// - classes 
+.wrapper{
+  width: $wrapper;
+  margin: 0 auto;
+  padding: 8px 0;
+}
+.max-width{
+  max-width: $wrapper;
+  margin: 0 auto;
+}
+// margins 
+.mt16{
+  margin-top: 16px;
+}
+.mb16{
+  margin-bottom: 16px;
+}
+.mh16{
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.ml16{
+  margin-left: 16px;
+}
+.ml8{
+  margin-left: 8px;
+}
+.mr16{
+  margin-right: 16px;
+}
+.mr8{
+  margin-right: 8;
+}
+// padding
+.p16{
+  padding: $padding;
+}
+.ph16{
+  padding: $padding-h;
+}
+.pv16{
+  padding: $padding-v;
+}
+.ph24{
+  padding: 0 24px !important;
+}
+.ph32{
+  padding: 0 32px !important;
+}
+.round{
+  border-radius: $form-field-radius;
+}

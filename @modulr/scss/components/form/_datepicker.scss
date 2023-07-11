@@ -1,0 +1,214 @@
+@use '../../config' as config;
+@use '../../theme' as color;
+$date-bg: #eee;
+
+.picker {
+  position: relative;
+  align-items: center;
+  float: left;
+  width: 100%;
+  background-color: $date-bg;
+  padding: 15px 22px 15px 28px;
+  border-radius: 0 0 22px 22px;
+  z-index: 10000;
+  & .select{
+    & .options{
+      top: 50px;
+      left: -10px;
+      min-width: 140px;
+    }
+    & .value{
+      position: relative;
+      top: 6px;
+      cursor: pointer;
+    }
+  }
+  & .checkin {
+    padding-right: 30px;
+  }
+  & .checkout {
+    padding-right: 30px;
+  }
+  & label {
+    float: left;
+    width: 100%;
+    font-weight: 400;
+    color: #999;
+    text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  & .input {
+    display: block;
+    float: left;
+    width: 95%;
+  }
+  & .divider {
+    float: right;
+    width: 1px;
+    display: block;
+    height: 44px;
+    border-right: 1px dashed #999;
+    background-image: none;
+  }
+  & input,
+  & select {
+    font-size: 16px;
+    border: none;
+    margin-top: 6px;
+    padding: 0;
+    margin-left: 0;
+    float: left;
+    width: 100%;
+    background-color: $date-bg;
+    height: 20px;
+    line-height: 20px;
+  }
+}
+.picker .submit {
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  transition: background 200ms ease-in-out;
+  & .icon {
+    width: 18px;
+    margin: 0 auto;
+    & svg {
+      fill: #fff;
+    }
+  }
+  &:hover{
+    background-color: color.$primary;
+  }
+  &.disabled, &.disabled:hover{
+    background-color: rgba(color.$accent, 0.1);
+    & .icon svg{
+      fill: #888;
+    }
+  }
+}
+// -- ui date picker edits
+.ui-datepicker {
+  z-index: 10000 !important;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 12%);
+  padding: 0;
+  margin-top: 5px;
+}
+.ui-widget.ui-widget-content {
+  border: none;
+  border-radius: 18px 18px 12px 12px;
+}
+.ui-datepicker-header {
+  background: rgba(color.$accent, 0.14);
+  color: #000;
+  font-family: config.$rel;
+  border: none;
+  border-radius: 122px;
+}
+.ui-datepicker 
+.ui-datepicker-prev, 
+.ui-datepicker 
+.ui-datepicker-next {
+  position: absolute;
+  top: 4px;
+  width: 30px;
+  height: 30px;
+  background: #dedede;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 200ms ease;
+  &.ui-state-hover{
+    background-image: none !important;
+    border: none !important;
+    background-color: color.$accent;
+    &::after{
+      color: #fff;
+    }
+  }
+}
+.ui-datepicker .ui-datepicker-next {
+  right: 4px;
+}
+.ui-datepicker .ui-datepicker-prev {
+  left: 4px;
+}
+.ui-datepicker-prev::after,
+.ui-datepicker-next::after{
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: config.$rel;
+  font-size: 18px;
+  font-weight: 600;
+  top: 5px;
+  color: #000;
+}
+.ui-datepicker-prev::after{
+  content: "<";
+  left: 6px;
+}
+.ui-datepicker-next::after{
+  content: ">";
+  left: 7px;
+}
+.ui-widget-header .ui-icon {
+  display: none !important;
+}
+.ui-datepicker td span, .ui-datepicker td a {
+  display: block;
+  padding: 0.2em;
+  text-align: right;
+  text-decoration: none;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-state-default, 
+.ui-widget-content 
+.ui-state-default, 
+.ui-widget-header 
+.ui-state-default, 
+.ui-button{
+  border: none !important;
+  background: #eee;
+  font-weight: normal;
+  color: #000;
+  font-family: config.$rel;
+  &:hover{
+    background: color.$primary;
+    color: #fff;
+  }
+}
+.ui-state-highlight, 
+.ui-widget-content 
+.ui-state-highlight, 
+.ui-widget-header 
+.ui-state-highlight {
+  border: none;
+  background: rgba(color.$accent, 0.14);
+  color: #000;
+}
+.ui-state-active, 
+.ui-widget-content 
+.ui-state-active, 
+.ui-widget-header 
+.ui-state-active, 
+a.ui-button:active, 
+.ui-button:active, 
+.ui-button.ui-state-active:hover {
+  background: color.$primary;
+  font-weight: normal;
+  color: #fff;
+}

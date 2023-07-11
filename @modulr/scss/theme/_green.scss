@@ -1,0 +1,87 @@
+$primary: #c4eed0;
+$accent: #11ac3d;
+$hover-color: #078b2d;
+$danger: #fa342d;
+$border: rgba($accent, 0.8);
+$fg: rgba($primary, 0.3);
+$after-hover: rgba($primary, 0.4);
+.white .green{
+  .fg{
+    background-color: $fg !important;
+  }
+  a.btn.fg, a.btn-icon.fg, button.fg{
+    &.primary{
+      color: $accent;
+    }
+  }
+  .primary{
+    background-color: $primary;
+    color: $accent;
+  }
+  // forms and buttons
+  button.animate:hover{
+    border-color: $border;
+    color: $accent !important;
+  }
+  .form-field .input:focus, .form-field textarea:focus {
+    border-color: $border;
+  }
+  .btn-icon.fg:hover{
+    color: $accent;
+    &::after{
+      background-color: $after-hover;
+    }
+  }
+  .menubar{
+    & li{
+      & .badge{
+        background-color: $accent !important;
+      }
+      & .line::after{
+        background-color: $accent;
+      }
+      & a:hover, & a.active{
+        color: $accent;
+      }
+    }
+    & .selcol .color{
+      background-color: $hover-color;
+    }
+  }
+}
+
+.dark .green{
+  .primary{
+    background-color: $primary;
+    color: $accent;
+  }
+  // forms and buttons
+  button.animate:hover{
+    border-color: $border;
+    color: $accent !important;
+    box-shadow: 0px 0px 16px rgba($primary, 0.12);
+  }
+  .form-field .input:focus, .form-field textarea:focus {
+    border-color: $border;
+    box-shadow: 0 0 0 3px rgba($primary, 0.04) !important;
+  }
+  // menubar
+  .menubar{
+    & li{
+      & .badge{
+        background-color: $accent !important;
+      }
+      & .line::after{
+        background-color: $primary;
+      }
+      & a:hover, & a.active{
+        & .icon{
+          color: $primary !important;
+        }
+      }
+    }
+    & .selcol .color{
+      background-color: $hover-color;
+    }
+  }
+}

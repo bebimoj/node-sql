@@ -1,0 +1,63 @@
+<div class="row heading">
+  <h1><%= util.capitalize(heading) %> Product</h1>
+</div>
+
+<div class="row">
+  <form
+    class="big"
+    action="<%= !editing ? '/post' : '/post' %>"
+    method="POST"
+  >
+    <% if (editing) { %>
+    <input type="hidden" value="<%= product.id %>" name="productId" />
+    <% } %>
+
+    <!-- form field start -->
+    <div class="form-field">
+      <input
+        required
+        class="input"
+        type="text"
+        name="title"
+        id="title"
+        data-placeholder="add product title"
+        value="<%= editing ? product.title :  '' %>"
+      />
+      <label for="title">Add product title</label>
+    </div>
+    <!-- form field end -->
+
+    <!-- form field start -->
+    <div class="form-field">
+      <input
+        required
+        class="input"
+        name="price"
+        id="price"
+        type="number"
+        step="0.01"
+        data-placeholder="add product price"
+        value="<%= editing ? product.price :  '' %>"
+      />
+      <label for="price">Add product price</label>
+    </div>
+    <!-- form field end -->
+
+    <!-- form field start -->
+    <div class="form-field">
+      <textarea
+        class="input"
+        type="text"
+        name="description"
+        id="description"
+        required
+        data-placeholder="Listing description"
+      ><%= editing ? listing.description :  '' %></textarea
+      >
+      <label for="description">Listing description</label>
+    </div>
+    <!-- form field end -->
+
+    <button class="btn-border fw">Submit</button>
+  </form>
+</div>

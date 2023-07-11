@@ -1,0 +1,23 @@
+// ripple
+.ripple {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  z-index: 100;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.36);
+  animation: rippleEffect 0.7s ease-in-out;
+}
+[data-ripple] {
+  position: relative;
+  overflow: hidden;
+}
+@keyframes rippleEffect {
+  0% {
+    transform: scale(1);
+  } 
+  100% {
+    opacity: 0;
+    transform: scale(var(--scale));
+  }
+}

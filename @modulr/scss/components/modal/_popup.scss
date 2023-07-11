@@ -1,0 +1,54 @@
+.popup {
+  width: 440px;
+  min-height: 200px;
+  display: block;
+  border-radius: 12px;
+  position: relative;
+  padding: 16px;
+  & .modal-content{
+    float: left;
+    width: 100%;
+  }
+  &.zoom{
+    animation: scaleIn;
+    animation-duration: 200ms;
+    animation-timing-function: ease;
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;
+    visibility: visible;
+  }
+  &.zoom-out{
+    animation: scaleOut;
+    animation-duration: 300ms;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+  & .popup-header {
+    float: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 54px;
+    padding: 0 16px;
+    & .or{
+      margin: 0 4px;
+    }
+    & .title{
+      float: left;
+      font-size: 21px;
+      & a{
+        font-weight: 600;
+      }
+    }
+    & .close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+  }
+  & .modal-content.padder{
+    padding: 16px 16px 20px 16px;
+  }
+}
+
+// popup animation

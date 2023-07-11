@@ -1,0 +1,207 @@
+$background: #222426;
+$foreground: #27292b;
+
+// edits
+//$background: #232328;
+$icon: #bbb;
+$text: #eee;
+$accent: #d2d2d2;
+$danger: #fa342d;
+.dark {
+  background-color: $background;
+  color: $text;
+  // colors
+  & .fg {
+    background-color: $foreground;
+  }
+  & .bg{
+    background-color: $background;
+  }
+  .accent{
+    background-color: $accent;
+    & .icon > span{
+      color: #000 !important;
+    }
+  }
+  .text-gray{
+    color: $icon;
+  }
+  // sections
+  & .intro {
+    & h1 {
+      font-weight: 500;
+    }
+    & p {
+      font-weight: 400;
+    }
+  }
+  // links and href
+  & .menu a {
+    color: $text;
+    & .line::after {
+      background-color: $text;
+    }
+  }
+  & .line{color: $icon;}
+  & .link {
+    color: $icon;
+    &.light {
+      color: $text;
+    }
+    &::after{
+      background-color: $icon;
+    }
+    &:hover {
+      color: $text;
+      &::after {
+        background-color: $text;
+      }
+    }
+  }
+  // buttons
+  & a,
+  button {
+    color: $text;
+    &:hover,
+    &.active,
+    &.light {
+      color: $text;
+      & .icon {
+        color: $text;
+      }
+      & svg {
+        fill: $text;
+      }
+    }
+    &.fill{
+      background-color: $foreground;
+    }
+  }
+  & .icon {
+    color: $icon;
+    & svg {
+      fill: $icon;
+    }
+    &:hover {
+      color: $text;
+      & svg {
+        fill: $text;
+      }
+    }
+  }
+  & a.fg:hover,
+  & button.fg:hover {
+    &::after {
+      background-color: #1f1e1e;
+    }
+    color: $text !important;
+  }
+  // form elements
+  input,
+  textarea {
+    background-color: $background !important;
+    color: $text !important;
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(234, 76, 137, 0.04);
+    }
+  }
+  .hint {
+    color: $icon !important;
+  }
+  & .form-field {
+    & label {
+      background-color: $background !important;
+      color: $icon !important;
+    }
+    & input:focus, & textarea:focus{
+      border-color: $text;
+    }
+    & .input:focus + label,
+    .input + label.active {
+      color: $text !important;
+    }
+  }
+  & button,
+  & a.btn,
+  & a.btn-border {
+    color: $icon;
+    &:hover {
+      color: $text;
+    }
+  }
+  .btn-border.animate{
+    &:hover{
+      background-color: $background;
+      color: $text;
+      border-color: $icon;
+    }
+  }
+  .btn.border{
+    &:hover{
+      border-color: $text;
+      background-color: $text;
+      color: #000;
+    }
+  }
+  // swiper
+  .swiper {
+    & .swipe-item {
+      & .text {
+        color: $icon;
+      }
+      &:hover .text {
+        color: $text;
+      }
+    }
+    & .btn-icon {
+      background-color: $background !important;
+      & svg path{
+        fill: $text;
+      }
+    }
+    & .paginate .swiper-pagination{
+      background-color: $background;
+      color: $icon;
+    }
+  }
+
+  // menubar
+  .menubar {
+    & li {
+      & .badge {
+        background-color: $text !important;
+      }
+      & a {
+        & .line::after {
+          background-color: $text;
+        }
+      }
+    }
+    & .tip {
+      background-color: $text;
+      color: #000;
+    }
+    & .selcol {
+      & .color {
+        background-color: $icon;
+      }
+    }
+  }
+
+  // listing elements
+  & .seller{
+    & .divider{
+      border-color: #777;
+    }
+    & .buttons .text{
+      color: $icon;
+    }
+  }
+
+  // auth
+  .auth .auth-footer{
+    & .link{
+      color: $text;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+$seller: 96px;
+.seller{
+  display: flex;
+  align-items: center;
+  height: $seller;
+  & .divider{
+    display: inline-block;
+    width: 1px;
+    height: 70px;
+    border-left: 1px dashed;
+    border-color: #777;
+  }
+}
+// seller info
+.seller .seller-info{
+  display: flex;
+  flex-direction: row;
+  height: $seller;
+  align-items: center;
+  min-width: 250px;
+  & .about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: $seller;
+    justify-content: center;
+    margin-left: 8px;
+    & .username{
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1;
+      margin: 3px 0 1px 0;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    & .handle{
+      font-size: 14px;
+      margin: 2px 0;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    & .review{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 1px 0 1px -3px;
+      & a{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        & .icon{
+          margin-top: -2px;
+          float: left;
+        }
+        & .link{
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+// meta
+.seller .pricing{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-grow: 1;
+  & .inner{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  & .line{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 5px 0;
+    font-weight: 500;
+    & .icon{
+      margin-right: 8px;
+      &.mr{
+        position: relative;
+        left: 1px;
+      }
+    }
+  }
+}
+// action buttons
+.seller .buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 238px;
+  & .btn-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 24px;
+    & .btn-icon{
+      margin: 0 0 8px 0;
+    }
+    & .text{
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+$sm: 42px;
+$md: 45px;
+$lg: 74px;
+.thumb{
+  border-radius: 50%;
+  height: $sm;
+  width: $sm;
+  display: block;
+  &.md{
+    height: $md;
+    width: $md;
+  }
+  &.lg{
+    width: $lg;
+    height: $lg;
+  }
+  & img{
+    float: left;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}

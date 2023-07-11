@@ -1,0 +1,31 @@
+@use 'theme/white';
+@use 'theme/dark';
+@use 'theme/green';
+@use 'theme/blue';
+
+
+// material colors
+$green: #c4eed0;
+$blue: #c2e7ff;
+$yellow: #fffcc2;
+$pink: #ffc2f1;
+$purple: #e9c2ff;
+$teal: #c2ffe6;
+
+
+
+
+// input themes
+$input-border-color: #777;
+$input-bg: #e0e0e0;
+$toggle-bg: #515151;
+$toggle-active-bg: #3b3b3b;
+$radio-checkbox-border-color: #515151;
+
+a {
+  color: #000;
+  font-weight: 500;
+  &.underline:hover {
+    text-decoration: underline;
+  }
+}

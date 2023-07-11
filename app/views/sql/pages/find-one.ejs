@@ -1,0 +1,19 @@
+<% if (product) { %>
+  <div class="heading">
+    <h1>Find One Product</h1>
+  </div>
+<div class="row list flex flex-middle">
+  <div class="content">
+    <h1 class="title">
+      <a href="/find-one/<%= product.id %>"><%= product.title %></a>
+    </h1>
+    <p>Price: $<%= product.price %></p>
+  </div>
+  <span class="spacer"></span>
+  <div class="buttons">
+    <a href="/edit/<%= product.id %>/?mode=true" type="button" class="btn rounded border">Edit</a>
+  </div>
+</div>
+<% } else {%>
+<p>There is no product</p>
+<% } %>

@@ -1,0 +1,50 @@
+
+// main colors
+
+$blue: #c2e7ff;
+$yellow: #fffcc2;
+
+$purple: #e9c2ff;
+$teal: #c2ffe6;
+$danger: #fa342d;
+
+// pink
+$pink: #ffc2f1;
+$deep-pink: #f50284;
+// green
+$green: #c4eed0;
+$deep-green: green;
+
+// $primary: #ec4388;
+// $deeppink: #f50284;
+// $text: #000;
+// $text-light: #3c3c3c;
+// $text-silver: #999;
+// $fill: #f6f6f6;
+// $light-fill: #fcfcfc;
+// $danger: #fa342d;
+// $menubar: #fafafa;
+
+.primary{
+  background-color: $pink !important;
+  color: $deep-pink !important;
+}
+.fg{
+  background-color: rgba($pink, 0.3);
+}
+.black {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.white {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.primary {
+  background-color: $primary !important;
+  color: #fff !important;
+}
+.accent {
+  background-color: $accent !important;
+  color: #fff !important;
+}

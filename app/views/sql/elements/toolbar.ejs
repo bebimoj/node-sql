@@ -1,0 +1,41 @@
+<div class="toolbar fixed">
+  <div class="toolbar-row">
+    <a href="/" class="logo light">
+      Sequelize
+    </a>
+    <!-- menu start -->
+    <ul class="menu inline">
+      <li>
+        <a class="<%= template === 'home' ? 'active' : '' %>" href="/">
+          Find All
+          <span class="line"></span>
+        </a>
+      </li>
+      <li>
+        <a class="<%= template === 'find-one' ? 'active' : '' %>" href="/find-one">
+          Find One
+          <span class="line"></span>
+        </a>
+      </li>
+      <li>
+        <a class="<%= template === 'group' ? 'active' : '' %>" href="/grouping">
+          Grouping
+          <span class="line"></span>
+        </a>
+      </li>
+      <li>
+        <a class="<%= template === 'post' ? 'active' : '' %>" href="/post">
+          Post
+          <span class="line"></span>
+        </a>
+      </li>
+      <li>
+        <a class="<%= template === 'edit' ? 'active' : '' %>" href="/edit/234/?mode=true">
+          Edit
+          <span class="line"></span>
+        </a>
+      </li>
+    </ul>
+    <!-- menu end -->
+  </div>
+</div>

@@ -1,0 +1,67 @@
+$primary: #ffc2f1;
+$accent: #1b1b1b;
+//$accent: #ec4388;
+$hover-color: #ff1492;
+$danger: #fa342d;
+$border: rgba($accent, 0.8);
+$foreground: #f6f6f6;
+$btn-hover: rgba(#eee, 0.4);
+.white{
+  background-color: #fff;
+  .fg{
+    background-color: $foreground !important;
+  }
+  .bg{
+    background-color: #fff;
+  }
+  a.btn.fg, a.btn-icon.fg, button.fg{
+    &.accent{
+      color: $accent;
+    }
+  }
+  .primary{
+    background-color: $primary;
+    color: $hover-color;
+  }
+  .accent{
+    background-color: $accent;
+    color: #fff;
+  }
+  .text-gray{
+    color: #3b3b3b;
+  }
+  // forms and buttons
+  button.animate:hover{
+    background-color: #fff;
+    border-color: $accent;
+    color: #000 !important;
+    box-shadow: 0px 0px 16px rgba($accent, 0.12);
+  }
+  .btn.border{
+    &:hover{
+      background-color: $accent;
+      color: #fff;
+      border-color: $accent;
+    }
+  }
+  .form-field .input:focus, .form-field textarea:focus {
+    border-color: $accent;
+    box-shadow: 0 0 0 4px rgba($accent,0.04);
+  }
+  .menubar{
+    & li{
+      & .badge{
+        background-color: $accent !important;
+      }
+      & .line::after{
+        background-color: #000;
+      }
+      & a:hover, & a.active{
+        color: #000;
+      }
+    }
+    & .selcol .color{
+      background-color: $accent;
+    }
+  }
+}

@@ -1,0 +1,186 @@
+@use '../../config' as config;
+$icon-size: 26px;
+.menubar{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: config.$menubar;
+  padding: 8px;
+  z-index: 1000;
+  & .menubar-row{
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 0;
+    transition: height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    & .logo{
+      height: 34px;
+    }
+    &.options{
+      & .selcol{
+        margin-bottom: 4px;
+      }
+    }
+    &.mb{
+      margin-bottom: 9px;
+    }
+    & .mt{
+      margin-top: 8px;
+    }
+    &.fh{
+      flex: 0 1 auto;
+    }
+  }
+}
+
+.menubar .menubar-row ul{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  & li, li a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  & li{
+    position: relative;
+    margin: 12px 0;
+    & a{
+      padding: 12px 0;
+      position: relative;
+      & .badge{
+        display: block;
+        width: 7px;
+        height: 7px;
+        background-color: #1b1b1b;
+        border-radius: 50%;
+        position: absolute;
+        top: 3px;
+        right: 15px;
+      }
+      & .material-symbols-outlined{
+        font-size: $icon-size;
+        width: $icon-size;
+        height: $icon-size;
+      }
+    }
+  }
+}
+// menubar line
+.menubar ul li a{
+  & .line, 
+  & .badge{
+    animation: fadeIn;
+    animation-duration: 600ms;
+    animation-timing-function: ease;
+  }
+  & .line{
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    display: block;
+    height: 1px;
+    width: 100%;
+    transition: padding 300ms ease-in-out;
+    padding: 0 50px;
+    &::after{
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: #1b1b1b;
+    }
+  }
+  &:hover, &.active{
+    & .line{
+      padding-left: 23px;
+      padding-right: 21px;
+    }
+  }
+}
+
+.menubar {
+  & .tip{
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #fff;
+    font-family: config.$roboto;
+    background-color: rgba(#000, 0.8);
+    margin-top: -14px;
+    visibility: hidden;
+    z-index: 10000;
+  }
+  & .thumb .tip,
+  .btn-icon .tip{
+    margin-left: 11px;
+  }
+  & .btn-icon{
+    overflow: visible;
+  }
+  & .thumb:hover, 
+  a:hover,
+  button:hover{
+    & .tip{
+      animation: showTip;
+      animation-duration: 500ms;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+@keyframes showTip {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(10%, 0, 0);
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// oclick logo
+.menubar{
+  & .logo.custom{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .icon{
+      width: 28px;
+      & span{
+        width: 28px;
+        font-size: 28px;
+        height: 28px;
+      }
+    }
+    & .text{
+      font-size: 14px;
+      margin-top: 6px;
+      float: left;
+      width: 100%;
+      text-align: center;
+      letter-spacing: normal;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@use '../../theme' as color;
+@use '../../config' as config;
+
+$checkbox-size: 24px;
+.checkbox{
+  position: relative;
+  display: flex;
+  height: $checkbox-size;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  & .mark{
+    height: $checkbox-size;
+    width: $checkbox-size;
+    border: 2px solid color.$radio-checkbox-border-color;
+    border-radius: 2px;
+  }
+  & .check{
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+  }
+}
+.checkbox input:checked ~ .mark {
+  background-color: color.$primary;
+  border-color: color.$primary;
+}
+// animated checkmark
+.checkbox input:checked ~ .check::before {
+  width: 15px;
+  transition-delay: 100ms;
+}
+.checkbox input:checked ~ .check::after {
+  width: 8px;
+  transition-delay: 0ms;
+}
+.checkbox .check:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: color.$accent;
+  transform: translate(6px, 13px) rotate(-45deg);
+  transform-origin: left;
+  transition: 100ms all linear;
+  transition-delay: 0ms;
+}
+.checkbox .check:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: color.$accent;
+  transform: translate(2px, 8px) rotate(45deg);
+  transform-origin: left;
+  transition: 100ms all linear;
+  transition-delay: 100ms;
+}

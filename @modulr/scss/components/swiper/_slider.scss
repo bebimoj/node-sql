@@ -1,0 +1,92 @@
+@use '../../theme' as color;
+@use '../../config' as config;
+$radius: 12px;
+$max-heigh: 546px;
+$icon: 36px;
+.gallery {
+  width: 100%;
+  height: auto;
+  max-height: $max-heigh;
+  border-radius: $radius;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+  float: left;
+  & .swiper-wrapper{
+    max-height: $max-heigh;
+  }
+  & .btn-icon {
+    position: absolute;
+    height: $icon;
+    width: $icon;
+    line-height: $icon;
+    top: 50%;
+    margin-top: -20px;
+    z-index: 100;
+    background-color: #fff !important;
+    visibility: hidden;
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+    & .icon span{
+      font-size: 28px !important;
+      line-height: 28px  !important;
+    }
+    &.sprev {
+      left: 10px;
+      & .icon span{
+        position: relative;
+        right: 1px;
+      }
+    }
+    &.snext {
+      right: 10px;
+      & .icon span{
+        position: relative;
+        left: 1px;
+      }
+    }
+  }
+}
+.swiper-slide {
+  border-radius: $radius;
+  overflow: hidden;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.paginate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  & .swiper-pagination {
+    position: relative;
+    display: block;
+    float: left;
+    width: auto;
+    background-color: #fff;
+    color: #000;
+    border-radius: 122px;
+    font-family: config.$number;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 3px 8px 2px 8px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+}
+.gallery:hover{
+  & .swiper-pagination, 
+  & .btn-icon{
+    visibility: visible;
+    opacity: 1;
+  }
+}

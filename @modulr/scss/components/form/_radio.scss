@@ -1,0 +1,50 @@
+@use '../../theme' as color;
+@use '../../config' as config;
+
+$radio-size: 24px;
+.radio {
+  position: relative;
+  display: flex;
+  height: $radio-size;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  & .mark {
+    cursor: pointer;
+    height: $radio-size;
+    width: $radio-size;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid color.$radio-checkbox-border-color;
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      background-color: color.$primary;
+      border-radius: 50%;
+      display: block;
+      transition-duration: 200ms;
+      transition-property: width, height;
+      transition-timing-function: ease-in-out;
+    }
+  }
+  & input:checked ~ .mark {
+    border-color: color.$primary;
+    &::after {
+      width: 12px;
+      height: 12px;
+      animation: scaleIn 200ms ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

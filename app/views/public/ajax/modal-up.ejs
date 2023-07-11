@@ -1,0 +1,37 @@
+<div class="slideup bg inup">
+  <button class="btn-icon fill close">
+    <span class="icon">
+      <span class="outlined">close</span>
+    </span>
+  </button>
+  <div class="modal-content">
+    <div class="wrapper">
+      <%- include(`./modal/${tpl}`) %>
+    </div>
+  </div>
+
+  <script>
+    $('.close').click(function (e) {
+      $(this).remove();
+      $('.modal-content').animate(
+        {
+          top: '100%',
+        },
+        200
+      );
+  
+      $('.slideup')
+        .delay(200)
+        .queue(function () {
+          $('body').css({
+            'padding-right': 0,
+            overflow: 'auto',
+          });
+          $(this).remove();
+        });
+  
+      e.preventDefault();
+    });
+  </script>
+
+</div>

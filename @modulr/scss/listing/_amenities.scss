@@ -1,0 +1,23 @@
+.amenities{
+  margin: 12px 0;
+  & .title{
+    margin-bottom: 16px;
+  }
+  & .item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 24px;
+    height: 40px;
+    & .icon{
+      margin-right: 8px;
+    }
+    & .text{
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+  & .more{
+    margin-top: 16px;
+  }
+}

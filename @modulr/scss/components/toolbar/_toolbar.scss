@@ -1,0 +1,61 @@
+@use '../../config' as config;
+$toolbar: 76px;
+$toolbar-padding: 20px;
+.toolbar {
+  display: flex;
+  align-items: center;
+  height: config.$toolbar;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  flex-direction: column;
+  z-index: 10000;
+  & .toolbar-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: $toolbar;
+    margin: 0 auto;
+    padding-left: config.$toolbar-padding;
+    padding-right: config.$toolbar-padding;
+    & .logo{
+      height: 36px;
+      & svg{
+        float: left;
+      }
+    }
+  }
+  &.active{
+    background-color: #fff;
+  }
+  & .dlmode{
+    margin-left: 8px;
+  }
+}
+
+.toolbar{
+  & .logo.custom{
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .icon{
+      width: 28px;
+      & span{
+        width: 28px;
+        font-size: 28px;
+        height: 28px;
+      }
+    }
+    & .text{
+      font-size: 14px;
+      margin-top: 6px;
+      float: left;
+      width: 100%;
+      text-align: center;
+      letter-spacing: normal;
+    }
+  }
+}

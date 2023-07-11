@@ -1,0 +1,50 @@
+@use '../../theme' as color;
+@use '../../config' as config;
+.toggle {
+  display: flex;
+  flex-direction: row;
+  height: config.$toggle-height;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: config.$toggle-width;
+  height: config.$toggle-height;
+  display: flex;
+  align-items: center;
+  & .slider {
+    background-color: color.$input-bg;
+    transition: 0.2s;
+    border-radius: 122px;
+    height: 14px;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    &::before{
+      content: "";
+      position: absolute;
+      height: config.$toggle-height;
+      width: config.$toggle-height;
+      left: -1px;
+      bottom: 0;
+      border-radius: 50%;
+      background-color: color.$togggle-bg;
+      transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.24);
+    }
+  }
+}
+.switch input:checked + .slider {
+  background-color: rgba($color: color.$primary, $alpha: 0.7)
+}
+.switch input:checked + .slider::before {
+  background-color: color.$primary;
+}
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px color.$primary;
+}
+.switch input:checked + .slider::before {
+  transform: translateX(config.$toggle-move);
+}
