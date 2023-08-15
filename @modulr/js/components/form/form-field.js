@@ -4,8 +4,7 @@ export function formField(){
     var input = $(element).find('.input')
     var label = $(element).find('label')
     var placeholder = input.data('placeholder')
-    var inputVal = input.val()
-    if(inputVal.length > 0){
+    if(input.val().length > 0){
       label.addClass('active')
     }
     input.on('change', (e) => { 

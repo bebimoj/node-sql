@@ -1,11 +1,10 @@
 <div class="row heading">
   <h1><%= util.capitalize(heading) %> Product</h1>
 </div>
-
 <div class="row">
   <form
     class="big"
-    action="<%= !editing ? '/post' : '/post' %>"
+    action="<%= !editing ? '/post' : '/edit' %>"
     method="POST"
   >
     <% if (editing) { %>
@@ -52,7 +51,7 @@
         id="description"
         required
         data-placeholder="Listing description"
-      ><%= editing ? listing.description :  '' %></textarea
+      ><%= editing ? product.description :  '' %></textarea
       >
       <label for="description">Listing description</label>
     </div>

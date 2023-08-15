@@ -19,8 +19,9 @@ $big-form: 56px;
   }
   & textarea{
     min-height: 140px;
-    padding: 13px;
     border-radius: 12px;
+    padding: 16px !important;
+    line-height: 21px !important;
   }
   & label {
     font-weight: 500;
@@ -31,7 +32,7 @@ $big-form: 56px;
     top: 5px;
     padding: 4px;
     transform-origin: 0 0;
-    transition: transform 300ms cubic-bezier(0.25, 0.8, 0.25, 1),color 400ms cubic-bezier(0.25, 0.8, 0.25, 1),width 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    //transition: transform 300ms cubic-bezier(0.25, 0.8, 0.25, 1),color 400ms cubic-bezier(0.25, 0.8, 0.25, 1),width 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
     pointer-events: none;
   }
   & .toggle-password{
@@ -70,9 +71,7 @@ textarea:focus + label,
 textarea + label.active{
   transform: translateY(-17px) scale(.80);
   background: #fff;
-  
 }
-
 // big form
 .big .form-field{
   $input-font: 18px;

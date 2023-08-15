@@ -6,32 +6,26 @@
     <!-- menu start -->
     <ul class="menu inline">
       <li>
-        <a class="<%= template === 'home' ? 'active' : '' %>" href="/">
+        <a class="<%= path === 'home' ? 'active' : '' %>" href="/">
           Find All
           <span class="line"></span>
         </a>
       </li>
       <li>
-        <a class="<%= template === 'find-one' ? 'active' : '' %>" href="/find-one">
-          Find One
+        <a class="<%= path === 'limit' ? 'active' : '' %>" href="/limit">
+          Limit Posts
           <span class="line"></span>
         </a>
       </li>
       <li>
-        <a class="<%= template === 'group' ? 'active' : '' %>" href="/grouping">
+        <a class="<%= path === 'group' ? 'active' : '' %>" href="/grouping">
           Grouping
           <span class="line"></span>
         </a>
       </li>
       <li>
-        <a class="<%= template === 'post' ? 'active' : '' %>" href="/post">
+        <a class="<%= path === 'post' ? 'active' : '' %>" href="/post">
           Post
-          <span class="line"></span>
-        </a>
-      </li>
-      <li>
-        <a class="<%= template === 'edit' ? 'active' : '' %>" href="/edit/234/?mode=true">
-          Edit
           <span class="line"></span>
         </a>
       </li>

@@ -12,6 +12,10 @@
   <span class="spacer"></span>
   <div class="buttons">
     <a href="/edit/<%= product.id %>/?mode=true" type="button" class="btn rounded border">Edit</a>
+    <form class="btn-form" action="/delete" method="POST">
+      <input type="hidden" value="<%= product.id %>" name="productId">
+      <button type="submit" class="btn border rounded">Delete</button>
+    </form>
   </div>
 </div>
 <% } else {%>

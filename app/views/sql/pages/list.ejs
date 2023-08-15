@@ -6,7 +6,7 @@
 <div class="row list flex flex-middle">
   <div class="content">
     <h1 class="title">
-      <a href="/listing/detail/<%= product.id %>"><%= product.title %></a>
+      <a href="/<%= product.id %>"><%= product.title %></a>
     </h1>
     <p>Price: $<%= product.price %></p>
   </div>
@@ -14,7 +14,7 @@
   <div class="buttons">
     <a href="/edit/<%= product.id %>/?mode=true" type="button" class="btn rounded border">Edit</a>
     <form class="btn-form" action="/delete" method="POST">
-      <input type="hidden" value="<%= product.id %>" name="prodId">
+      <input type="hidden" value="<%= product.id %>" name="productId">
       <button type="submit" class="btn border rounded">Delete</button>
     </form>
   </div>

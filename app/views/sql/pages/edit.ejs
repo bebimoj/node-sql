@@ -1,3 +1,7 @@
 <div class="row">
-  <%- include('../elements/post-form', {heading: "edit"}) %>
+  <% if (product) { %>
+    <%- include('../elements/post-form', {heading: "edit"}) %>
+  <% } else {%>
+     <p>Loading ....</p>
+  <% } %>
 </div>
